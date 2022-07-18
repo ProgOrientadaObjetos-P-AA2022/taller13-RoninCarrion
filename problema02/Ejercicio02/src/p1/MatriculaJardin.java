@@ -5,20 +5,25 @@
  */
 package p1;
 
+import p2.Matriculas;
+
 /**
  *
  * @author reroes
  */
-public class MatriculaJardin {
-    private double tarifa;
+public class MatriculaJardin extends Matriculas{
     
-        
+ 
+    @Override
     public void establecerTarifa(){
         // tarifa = costo desayunos + costo libros + costo paseos
-        tarifa = 50.2 + 140.2 + 40;
+        tarifas = 50.2 + 140.2 + 40;
     }
-        
-    public double obtenerTarifa(){
-        return tarifa;
+    
+    @Override
+    public String toString() {
+        String mensaje = String.format("->Matricula Jardin: %.2f", tarifas);
+        return mensaje;
     }
+
 }

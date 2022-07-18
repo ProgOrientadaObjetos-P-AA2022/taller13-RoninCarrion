@@ -12,7 +12,7 @@ import p3.Correo;
  *
  * @author reroes
  */
-public class Estudiante {
+public class Estudiante{
 
     private String nombres;
     private String username;
@@ -49,7 +49,7 @@ public class Estudiante {
         for (int i = 0; i < correos.size(); i++) {
 
             data = String.format("%s%s\n", data,
-                    correos.get(i).obtenerCorreo());
+                    correos.get(i).obtenerDominio());
         }
         return data;
     }

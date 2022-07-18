@@ -8,7 +8,8 @@ package p1;
 import java.util.ArrayList;
 import p2.Estudiante;
 import p3.Correo;
-import p3.DominioGmail;
+import p3.Dominio;
+import p3.Dominio;
 
 /**
  *
@@ -26,27 +27,22 @@ public class Principal {
         Para utpl.edu.ec
         Para gobiernoec.gob
         
-        */
-        
+         */
+        Dominio dominio = null;
         Estudiante e = new Estudiante();
         e.establecerNombres("René Elizalde");
         e.establecerUserName("rrelizalde");
+
         ArrayList<Correo> lista = new ArrayList<>();
-        
-        DominioGmail dominio = new DominioGmail();
-        dominio.establecerDominio("gmail.com");
         Correo c = new Correo();
-        c.establecerDominio(dominio);
         c.establecerUserName(e.obtenerUserName());
-        c.establecerCorreo();
-        
+        c.establecerDominio("gmail.com");
         lista.add(c);
-        
+
         e.establecerCorreos(lista);
-        
+
         System.out.printf("%s\n", e);
-        
-        
+
     }
-    
+
 }

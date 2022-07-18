@@ -5,45 +5,46 @@
  */
 package p2;
 
-import p1.MatriculaCampamento;
-import p1.MatriculaColegio;
+import java.util.ArrayList;
 
 /**
  *
  * @author reroes
  */
 public class TipoMatricula {
-    private double promedioMatriculas;
-    private MatriculaCampamento campamento;
-    private MatriculaColegio colegio;
-    // private MatriculaEscuela escuela;
-    // private MatriculaJardin jardin;
-    // private MatriculaMaternal maternal;
-    // private MatriculaMaternal maternal2;
-    
-    public void establecerMatriculaCampamento(MatriculaCampamento c){
-        campamento = c;
+
+    private double promedioTarifas;
+    private ArrayList<Matriculas> a = new ArrayList<>();
+
+    public TipoMatricula() {
     }
-    
-    public void establecerMatriculaColegio(MatriculaColegio c){
-        colegio = c;
+
+    public TipoMatricula(ArrayList<Matriculas> b) {
+        a = b;
     }
-    
-    public MatriculaCampamento obtenerMatriculaCampamento(){
-        return campamento;
+
+    public void establecerPromedioTarifas() {
+        for (int i = 0; i < a.size(); i++) {
+            promedioTarifas += a.get(i).obtenerTarifas();
+        }
+        promedioTarifas /= a.size();
+
     }
-    
-    public MatriculaColegio obtenerMatriculaColegio(){
-        return colegio;
+
+    public double obtenerPromedioTarifas() {
+        return promedioTarifas;
     }
-    
-    public void establecerPromedioTarifas(){
-        promedioMatriculas = (obtenerMatriculaCampamento().obtenerTarifa() + 
-                obtenerMatriculaColegio().obtenerTarifa())/2;
-        
+
+    @Override
+    public String toString() {
+        String mensaje = String.format("\tMATRICULAS"
+        );
+        for (int i = 0; i < a.size(); i++) {
+            mensaje = String.format("%s\n%s", mensaje, a.get(i));
+
+        }
+        mensaje = String.format("%s\n>>Promedio Tarifas: %.2f", mensaje, promedioTarifas);
+        return mensaje;
     }
-    
-    public double obtenerPromedioTarifas(){
-        return promedioMatriculas;
-    }
+
 }

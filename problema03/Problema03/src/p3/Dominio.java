@@ -9,14 +9,10 @@ package p3;
  *
  * @author reroes
  */
-public class DominioGmail {
-    private String dominio;
-    
-    public void establecerDominio(String g){
-        dominio = g;
-    }
-    
-    public String obtenerDominio(){
-        return dominio;
-    }
+public interface Dominio {
+
+    public void establecerDominio(String dominio);
+
+    public String obtenerDominio();
+
 }

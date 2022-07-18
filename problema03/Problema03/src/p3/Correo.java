@@ -9,34 +9,25 @@ package p3;
  *
  * @author reroes
  */
-public class Correo {
-    private DominioGmail dominioGmail;
+public class Correo implements Dominio{
     private String correo;
     private String username;
-    
-    public void establecerDominio(DominioGmail g){
-        dominioGmail = g;
-    }
     
     public void establecerUserName(String u){
         username = u;
     }
     
-    public void establecerCorreo(){
-        correo = String.format("%s@%s", obtenerUserName(), 
-                obtenerDominio().obtenerDominio());
-    }
-    
-    public DominioGmail obtenerDominio(){
-        return dominioGmail;
+    public void establecerDominio(String dominio){
+        correo = String.format("%s@%s", obtenerUserName(),dominio);
     }
     
     public String obtenerUserName(){
         return username;
     }
     
-    public String obtenerCorreo(){
+    public String obtenerDominio(){
         return correo;
     }
+
     
 }
