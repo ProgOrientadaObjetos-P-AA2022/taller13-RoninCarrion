@@ -49,7 +49,7 @@ public class Estudiante{
         for (int i = 0; i < correos.size(); i++) {
 
             data = String.format("%s%s\n", data,
-                    correos.get(i).obtenerDominio());
+                    correos.get(i).obtenerCorreo());
         }
         return data;
     }
